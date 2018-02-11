@@ -35,3 +35,84 @@ read-property sent all bytes from wireshark:
 00 2e 4a ee 00 00 80 11 3b 4c 0a 32 50 0b 0a 32 
 50 16 ba c0 ba c0 00 1a b9 d7 81 0a 00 12 01 04
 02 03 06 0c 0c 45 80 00 01 1a 04 4d
+
+
+//read property response bacnet settings. Object Type 278, property 1101
+
+  -Ethernet and IP stuff.......
+  
+  -*** here begin the application decoding***
+  -BACnet Virtual Link BVLC, type: 81
+  -BACnet Virtual Link BVLC, Function; 0a (original unicast NDPU)
+  -BACnet Virtual Link BVLC, length: 01 31 (305 bytes including BVLC type, function and length)
+  -NPDU version: 01 (Ashrea 135-1995)
+  -NPDU control: 00 (standard...)
+  -APDU Type: 30 (Complex-ACK) (03 must be decode high/low byte)
+  -APDU Invoke ID: 06
+  -APDU Service: 0c (readproperty 12)   
+  -APDU context tag #0: 0c
+  -APDU Object Type and instance number: 45 80 00 01 (NET object 278 instance 1) (must be decode as 4 bytes...)
+  -APDU context tag #1: 1a
+  -APDU Property value: 04 4d (property 1101)
+  -APDU context tag (opening) #3: 3e
+  -APDU context tag (opening) #3: 3e
+  -APDU context tag #0: 0a
+  -APDU context value (2 data octets): 4e 22
+  -APDU context tag #1: 19
+  -APDU context value (1 data octets): 01 
+  -APDU context tag #2: 29
+  -APDU context value (1 data octets): 02
+  -APDU context tag #3: 39
+  -APDU context value (1 data octets): 09
+  -APDU context tag #4: 49
+  -APDU context value (1 data octets): 7f
+  -APDU context tag #5: 59
+  -APDU context value (1 data octets): 08
+  -APDU context tag #6: 69
+  -APDU context value (1 data octets): 00
+  -APDU context tag (closing) #3: 3f
+  -APDU context tag (opening) #3: 3e
+  -APDU context tag #0: 0a
+  -APDU context value (2 data octets): c3 52
+  -APDU context tag #1: 19
+  -APDU context value (1 data octets): 02 
+  -APDU context tag #2: 29
+  -APDU context value (1 data octets): 00
+  -APDU context tag #3: 39
+  -APDU context value (1 data octets): 09
+  -APDU context tag #4: 49
+  -APDU context value (1 data octets): 7f
+  -APDU context tag #5: 59
+  -APDU context value (1 data octets): 08
+  -APDU context tag #6: 69
+  -APDU context value (1 data octets): 00  
+  -APDU context tag (closing) #3: 3f  
+  -APDU context tag (opening) #2: 2e 
+  -APDU context tag #0: 0a
+  -APDU context value (2 data octets): 27 74
+  -APDU context tag #1: 19
+  -APDU context value (1 data octets): 01
+  -APDU context tag (opening) #2: 2e   
+  -APDU context tag #0: 09
+  -APDU context value (1 data octets): 05
+  -APDU context tag #1: 19
+  -APDU context value (1 data octets): 00 
+  -APDU context tag #2: 29
+  -APDU context value (1 data octets): 01
+  -APDU context tag #3: 39
+  -APDU context value (1 data octets): 01
+  -APDU context tag #4: 49
+  -APDU context value (1 data octets): 08
+  -APDU context tag #5: 59
+  -APDU context value (1 data octets): 00
+  -APDU context tag #6: 69
+  -APDU context value (1 data octets): 00    
+  -APDU context tag #7: 79
+  -APDU context value (1 data octets): 02
+  -APDU context tag #8: 89
+  -APDU context value (1 data octets): 00      
+  -APDU context tag #9: 99
+  -APDU context value (1 data octets): 01
+  -APDU context tag #10 and length: ad 15
+  -APDU context value (21 data octets): 00 41 54 26 46 31 26 52 31 59 30 26 57 30 26 41 54 53 30 3d 31   
+  
