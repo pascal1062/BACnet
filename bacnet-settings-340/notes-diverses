@@ -1,1 +1,36 @@
 
+Ethernet Layer:
+  -destination address (48 bytes): ex. ff ff ff ff ff ff (broadcast)
+  -source address (48 bytes): ex. 08 00 27 25 a6 b7  (device, OWS, etc... ici mon XP virtuel)
+
+BACnet-IP layer:
+  -Ethernet layer sent first...
+  -Type IP bytes (0x8000): 08 00
+  -Internet Protocol Version 4 : 45 00 00 2e 43 2f 00 00 80 11 42 22
+  -Internet Protocol Version 4, Source address: 0a 32 50 0b (10.50.80.11)
+  -Internet Protocol Version 4, Destination address: 0a 32 50 ff (10.50.80.255)
+  -User Datagram Protocol UDP, source port: ba c0
+  -User Datagram Protocol UDP, destination port: ba c0
+  -User Datagram Protocol UDP, length and checksum: 00 1a 82 b7
+  
+  -*** here begin the application encoding***
+  -BACnet Virtual Link BVLC, type: 81
+  -BACnet Virtual Link BVLC, Function; 0b (original unicast)
+  -BACnet Virtual Link BVLC, length: 00 12
+  -NPDU version: 01 (Ashrea 135-1995)
+  -NPDU control: 20
+  -NPDU destination net address: ff ff
+  -NPDU destination mac layer address: 00 (0 indicates a broadcast)
+  -NPDU Hop Count: ff
+  -APDU Type: 10 (Unconfirmed-REQ)
+  -APDU Service: 08 (Who-is)
+  -APDU context tag #0: 0a
+  -APDU Dev instance Low-limit: 04 b0 (1200)
+  -APDU context tag #1: 1a
+  -APDU Dev instance high-limit: 04 b0 (1200)
+  
+Who-is broadcast all bytes from wireshark:
+ff ff ff ff ff ff 08 00 27 25 a6 b7 08 00 45 00 
+00 2e 43 2f 00 00 80 11 42 22 0a 32 50 0b 0a 32
+50 ff ba c0 ba c0 00 1a 82 b7 81 0b 00 12 01 20
+ff ff 00 ff 10 08 0a 04 b0 1a 04 b0  
