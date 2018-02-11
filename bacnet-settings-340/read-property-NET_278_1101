@@ -1,1 +1,37 @@
 
+//read property bacnet settings. Object Type 278, property 1101
+
+Ethernet Layer:
+  -destination address (48 bytes): ex. 00 40 ae 00 74 1a (DSC1212E mac address)
+  -source address (48 bytes): ex. 08 00 27 25 a6 b7  (device, OWS, etc... ici mon XP virtuel)
+
+BACnet-IP layer:
+  -Ethernet layer sent first...
+  -Type IP bytes (0x8000): 08 00
+  -Internet Protocol Version 4 : 45 00 00 2e 4a ee 00 00 80 11 3b 4c
+  -Internet Protocol Version 4, Source address: 0a 32 50 0b (10.50.80.11)
+  -Internet Protocol Version 4, Destination address: 0a 32 50 16 (10.50.80.22  IP-DSC1212E)
+  -User Datagram Protocol UDP, source port: ba c0
+  -User Datagram Protocol UDP, destination port: ba c0
+  -User Datagram Protocol UDP, length and checksum: 00 1a b9 d7
+  
+  -*** here begin the application encoding***
+  -BACnet Virtual Link BVLC, type: 81
+  -BACnet Virtual Link BVLC, Function; 0a (original unicast NDPU)
+  -BACnet Virtual Link BVLC, length: 00 12 
+  -NPDU version: 01 (Ashrea 135-1995)
+  -NPDU control: 04 (Expecting data reply)
+  -APDU Type: 02 (Confirmed-REQ)
+  -APDU Segment and APDU response: 03  
+  -APDU Invoke ID: 06
+  -APDU Service: 0c (readproperty 12)  
+  -APDU context specific tag #0: 0c
+  -APDU Object Type and instance number: 45 80 00 01 (NET object 278 instance 1) (must be decode as 4 bytes...)
+  -APDU context specific tag #1: 1a
+  -APDU Property value: 04 4d (property 1101)
+  
+read-property sent all bytes from wireshark:
+00 40 ae 00 74 1a 08 00 27 25 a6 b7 08 00 45 00
+00 2e 4a ee 00 00 80 11 3b 4c 0a 32 50 0b 0a 32 
+50 16 ba c0 ba c0 00 1a b9 d7 81 0a 00 12 01 04
+02 03 06 0c 0c 45 80 00 01 1a 04 4d
