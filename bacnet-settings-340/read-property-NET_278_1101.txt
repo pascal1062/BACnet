@@ -1,5 +1,5 @@
 
-//read property bacnet settings. Object Type 278, property 1101
+//read property request bacnet settings. Object Type 278, property 1101
 
 Ethernet Layer:
   -destination address (48 bytes): ex. 00 40 ae 00 74 1a (DSC1212E mac address)
