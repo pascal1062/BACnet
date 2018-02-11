@@ -129,6 +129,18 @@ read-property sent all bytes from wireshark:
   -APDU context value (4 data octets): 00 41 54 48 
   -APDU context tag #17 extended: f9 11
   -APDU context value (1 data octets): 00
-
-
-
+  -APDU context tag #18 extended: f9 12
+  -APDU context value (1 data octets): 3c
+  -APDU context tag #19 extended: f9 13
+  -APDU context value (1 data octets): 01
+  -APDU context tag #20 extended: fd 14 05
+  -APDU context value (5 data octets): 00 41 54 44 54  
+  -APDU context tag #21 extended: f9 15
+  -APDU context value (1 data octets): 02
+  -APDU context tag #22 extended: f9 16
+  -APDU context value (1 data octets): 00
+  -APDU context tag #23 extended: fc 17
+  -APDU context value (4 data octets): ff ff ff ff
+  -APDU context tag (closing) #2: 2f
+...packet 18 line 00c0  
+  
