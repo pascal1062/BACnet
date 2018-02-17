@@ -16,7 +16,7 @@ BACnet-IP layer:
   -*** here begin the application encoding***
   -BACnet Virtual Link BVLC, type: 81
   -BACnet Virtual Link BVLC, Function; 0b (original unicast)
-  -BACnet Virtual Link BVLC, length: 00 12
+  -BACnet Virtual Link BVLC, length: 00 12 (18 bytes including BVLC type, function and length)
   -NPDU version: 01 (Ashrea 135-1995)
   -NPDU control: 20
   -NPDU destination net address: ff ff
